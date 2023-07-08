@@ -1,0 +1,218 @@
+
+
+{
+    "furniture": [
+      {
+        "id": 1,
+        "name": "Sofa",
+        "description": "Comfortable couch for seating",
+        "picture": "/accent_chair.jpg",
+        "category": "Living Room",
+        "price": 799.99,
+        "available": true,
+        "dimensions": {
+          "width": 84,
+          "height": 36,
+          "depth": 38
+        },
+        "colors": ["Gray", "Beige", "Blue"],
+        "materials": ["Fabric", "Wood"],
+        "reviews": [
+          {
+            "id": 1,
+            "rating": 4.5,
+            "comment": "Love the sofa! Very comfortable and stylish.",
+            "author": "John Doe"
+          },
+          {
+            "id": 2,
+            "rating": 3.8,
+            "comment": "Decent sofa for the price. Could be more cushiony.",
+            "author": "Jane Smith"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Dining Table",
+        "description": "Large table for dining purposes",
+        "picture": "/dining_table.jpg",
+        "category": "Dining Room",
+        "price": 499.99,
+        "available": false,
+        "dimensions": {
+          "width": 72,
+          "height": 30,
+          "depth": 36
+        },
+        "colors": ["Brown", "Black"],
+        "materials": ["Wood"],
+        "reviews": []
+      },
+      {
+        "id": 3,
+        "name": "Bed",
+        "description": "Comfortable bed for a good night's sleep",
+        "picture": "/bed.jpg",
+        "category": "Bedroom",
+        "price": 1299.99,
+        "available": true,
+        "dimensions": {
+          "width": 76,
+          "height": 48,
+          "depth": 80
+        },
+        "colors": ["White", "Gray"],
+        "materials": ["Wood", "Metal"],
+        "reviews": [
+          {
+            "id": 3,
+            "rating": 4.2,
+            "comment": "High-quality bed with a stylish design.",
+            "author": "Sarah Johnson"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Coffee Table",
+        "description": "Small table for placing beverages and snacks",
+        "picture": "/coffee_table.jpg",
+        "category": "Living Room",
+        "price": 199.99,
+        "available": true,
+        "dimensions": {
+          "width": 36,
+          "height": 18,
+          "depth": 24
+        },
+        "colors": ["Black", "Brown"],
+        "materials": ["Wood", "Glass"],
+        "reviews": []
+      },
+      {
+        "id": 5,
+        "name": "Bookshelf",
+        "description": "Storage unit for books and decorative items",
+        "picture": "/bookshelf.jpg",
+        "category": "Home Office",
+        "price": 399.99,
+        "available": true,
+        "dimensions": {
+          "width": 48,
+          "height": 72,
+          "depth": 12
+        },
+        "colors": ["White", "Black"],
+        "materials": ["Wood", "Metal"],
+        "reviews": [
+          {
+            "id": 4,
+            "rating": 4.8,
+            "comment": "Sturdy and elegant bookshelf. Love it!",
+            "author": "Michael Thompson"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Desk",
+        "description": "Workstation for studying or working",
+        "picture": "/desk.jpg",
+        "category": "Home Office",
+        "price": 299.99,
+        "available": true,
+        "dimensions": {
+          "width": 60,
+          "height": 30,
+          "depth": 24
+        },
+        "colors": ["Brown", "White"],
+        "materials": ["Wood"],
+        "reviews": [
+          {
+            "id": 5,
+            "rating": 4.6,
+            "comment": "Great desk for productivity. Highly recommend!",
+            "author": "Emily Davis"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Wardrobe",
+        "description": "Large storage unit for clothes and accessories",
+        "picture": "/wardrobe.jpg",
+        "category": "Bedroom",
+        "price": 899.99,
+        "available": true,
+        "dimensions": {
+          "width": 72,
+          "height": 84,
+          "depth": 24
+        },
+        "colors": ["White", "Gray"],
+        "materials": ["Wood"],
+        "reviews": []
+      },
+      {
+        "id": 8,
+        "name": "TV Stand",
+        "description": "Entertainment unit for TVs and media devices",
+        "picture": "/tv_stand.jpg",
+        "category": "Living Room",
+        "price": 349.99,
+        "available": true,
+        "dimensions": {
+          "width": 60,
+          "height": 24,
+          "depth": 16
+        },
+        "colors": ["Black", "Brown"],
+        "materials": ["Wood", "Metal"],
+        "reviews": [
+          {
+            "id": 6,
+            "rating": 4.4,
+            "comment": "Stylish and practical TV stand. Fits my TV perfectly.",
+            "author": "David Anderson"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Accent Chair",
+        "description": "Stylish chair for adding a pop of color to a room",
+        "picture": "/accent_chair.jpg",
+        "category": "Living Room",
+        "price": 249.99,
+        "available": true,
+        "dimensions": {
+          "width": 30,
+          "height": 34,
+          "depth": 30
+        },
+        "colors": ["Red", "Yellow", "Blue"],
+        "materials": ["Fabric", "Wood"],
+        "reviews": []
+      },
+      {
+        "id": 10,
+        "name": "Dresser",
+        "description": "Large storage unit for clothes and accessories",
+        "picture": "/dresser.jpg",
+        "category": "Bedroom",
+        "price": 599.99,
+        "available": false,
+        "dimensions": {
+          "width": 60,
+          "height": 36,
+          "depth": 18
+        },
+        "colors": ["White", "Black"],
+        "materials": ["Wood"],
+        "reviews": []
+      }
+    ]
+  }
+  

@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Footer = () => {
+    const [isMobile, setIsMobile] = useState<boolean>(false)
+
+    // to know when mobile device
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.matchMedia('(max-width: 376px)').matches);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
-        <div className='flex lg:gap-[84px] lg:px-[100px] lg:py-[93px]'>
-            <div className='flex flex-col lg:gap-[69px] lg:w-[666px]'>
-                <div className='flex flex-col lg:gap-[25px] lg:w-[504px]'>
+        <div className={`${isMobile ? 'flex-col' : 'flex'} py-[35px] px-4  lg:gap-[84px] lg:px-[100px] lg:py-[93px]`}>
+            {/* left side footer */}
+            <div className='flex flex-col  lg:gap-[69px] lg:w-[666px]'>
+                <div className={`flex flex-col ${isMobile ? 'justify-center items-center ' : ''} gap-[35px] lg:gap-[25px] lg:w-[504px] `}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="98" height="30" viewBox="0 0 98 30" fill="none">
                         <path d="M4.64 12.68C4.64 7.79247 4.64 5.34871 5.81297 3.59323C6.32076 2.83327 6.97327 2.18076 7.73323 1.67297C9.48871 0.5 11.9325 0.5 16.82 0.5C21.7075 0.5 24.1513 0.5 25.9068 1.67297C26.6667 2.18076 27.3192 2.83327 27.827 3.59323C29 5.34871 29 7.79247 29 12.68C29 17.5675 29 20.0113 27.827 21.7668C27.3192 22.5267 26.6667 23.1792 25.9068 23.687C24.1513 24.86 21.7075 24.86 16.82 24.86C11.9325 24.86 9.48871 24.86 7.73323 23.687C6.97327 23.1792 6.32076 22.5267 5.81297 21.7668C4.64 20.0113 4.64 17.5675 4.64 12.68Z" fill="#553B33" />
                         <path d="M0 14.42C0 10.0454 0 7.85805 1.35902 6.49902C2.71805 5.14 4.90537 5.14 9.28 5.14H15.08C19.4546 5.14 21.6419 5.14 23.001 6.49902C24.36 7.85805 24.36 10.0454 24.36 14.42V20.22C24.36 24.5946 24.36 26.7819 23.001 28.141C21.6419 29.5 19.4546 29.5 15.08 29.5H9.28C4.90537 29.5 2.71805 29.5 1.35902 28.141C0 26.7819 0 24.5946 0 20.22V14.42Z" fill="#2F241F" />
@@ -15,26 +28,31 @@ const Footer = () => {
                         <path d="M85.0488 21.8678C84.025 21.8678 83.1397 21.6503 82.3927 21.2153C81.6501 20.7759 81.0767 20.1651 80.6725 19.383C80.2682 18.5965 80.0661 17.6848 80.0661 16.6478C80.0661 15.602 80.2682 14.6881 80.6725 13.906C81.0767 13.1195 81.6501 12.5087 82.3927 12.0737C83.1397 11.6343 84.025 11.4146 85.0488 11.4146C86.0726 11.4146 86.9558 11.6343 87.6984 12.0737C88.4453 12.5087 89.0209 13.1195 89.4252 13.906C89.8294 14.6881 90.0315 15.602 90.0315 16.6478C90.0315 17.6848 89.8294 18.5965 89.4252 19.383C89.0209 20.1651 88.4453 20.7759 87.6984 21.2153C86.9558 21.6503 86.0726 21.8678 85.0488 21.8678ZM85.062 19.6928C85.5278 19.6928 85.9166 19.561 86.2286 19.2973C86.5406 19.0293 86.7756 18.6646 86.9338 18.2032C87.0964 17.7419 87.1777 17.2168 87.1777 16.628C87.1777 16.0392 87.0964 15.5141 86.9338 15.0528C86.7756 14.5914 86.5406 14.2267 86.2286 13.9587C85.9166 13.6907 85.5278 13.5566 85.062 13.5566C84.5918 13.5566 84.1964 13.6907 83.8756 13.9587C83.5593 14.2267 83.3198 14.5914 83.1572 15.0528C82.999 15.5141 82.92 16.0392 82.92 16.628C82.92 17.2168 82.999 17.7419 83.1572 18.2032C83.3198 18.6646 83.5593 19.0293 83.8756 19.2973C84.1964 19.561 84.5918 19.6928 85.062 19.6928Z" fill="#2F241F" />
                         <path d="M91.1148 21.6701V11.5464H93.8369V13.3128H93.9423C94.1269 12.6845 94.4366 12.2099 94.8716 11.8891C95.3066 11.564 95.8076 11.4014 96.3744 11.4014C96.515 11.4014 96.6666 11.4102 96.8291 11.4278C96.9917 11.4454 97.1345 11.4695 97.2576 11.5003V13.9916C97.1257 13.9521 96.9434 13.917 96.7105 13.8862C96.4776 13.8554 96.2645 13.8401 96.0712 13.8401C95.6582 13.8401 95.2891 13.9301 94.9639 14.1103C94.6432 14.286 94.3883 14.5321 94.1994 14.8485C94.0148 15.1648 93.9226 15.5295 93.9226 15.9426V21.6701H91.1148Z" fill="#2F241F" />
                     </svg>
-                    <h1 className=' lg:text-base text-footerColor'>
+                    <h1 className={` lg:text-base text-footerColor ${isMobile ? 'text-center' : ''}`}>
                         Dekoor is a furniture company created to fulfill the needs of family with aesthetic feeling in their furniture. Always pay attention to details and give clear communication for the customers. Priority of our design is comfortability.
                     </h1>
                 </div>
-                <h1 className=' lg:text-base text-footerColor'>©Copyright 2022 Dekoor</h1>
+                {/* for when mobile device the text move to the bottom */}
+                {
+                    isMobile ? <></> : <h1 className=' lg:text-base text-footerColor '>©Copyright 2022 Dekoor</h1>
+                }
             </div>
-
-            <div className='flex lg:gap-[52px] lg:w-[490px]'>
-                <div className='flex flex-col lg:gap-[25px]'>
+            {/* right side footer */}
+            <div className='flex flex-wrap justify-center items-center gap-10 mt-[35px] lg:mt-0 lg:gap-[52px] lg:w-[490px]'>
+                {/* Support section */}
+                <div className='flex flex-col items-center gap-[25px]'>
                     <h1 className='lg:text-[20px] font-medium text-footerTitle'>Support</h1>
-                    <div className='flex flex-col lg:gap-[30px] text-footerColor'>
+                    <div className='flex flex-col gap-[30px] text-footerColor items-center'>
                         <h1 className='lg:text-[16px]'>FAQ</h1>
                         <h1 className='lg:text-[16px]'>Shipping & Returns</h1>
                         <h1 className='lg:text-[16px]'>Care guide</h1>
                         <h1 className='lg:text-[16px]'>Redeem warranty</h1>
                     </div>
                 </div>
-                <div className='flex flex-col lg:gap-[25px] w-32'>
+                {/* Social Media section */}
+                <div className='flex flex-col gap-[25px] w-32 items-center'>
                     <h1 className='lg:text-[20px] font-medium text-footerTitle'>Social Media</h1>
-                    <div className='flex flex-col lg:gap-[30px] text-footerColor'>
+                    <div className='flex flex-col gap-[30px] text-footerColor items-center  '>
                         <h1 className='lg:text-[16px]'>Instagram</h1>
                         <h1 className='lg:text-[16px]'>Facebook</h1>
                         <h1 className='lg:text-[16px]'>Twitter</h1>
@@ -42,17 +60,21 @@ const Footer = () => {
                     </div>
 
                 </div>
-                <div className='flex flex-col lg:gap-[25px]'>
+                {/* About Us section */}
+                <div className='flex flex-col gap-[25px] items-center'>
                     <h1 className='lg:text-[20px] font-medium text-footerTitle'>About Us</h1>
-                    <div className='flex flex-col lg:gap-[30px] text-footerColor'>
+                    <div className='flex flex-col gap-[30px] text-footerColor items-center'>
                         <h1 className='lg:text-[16px]'>Our story</h1>
                         <h1 className='lg:text-[16px]'>Designer</h1>
                         <h1 className='lg:text-[16px]'>Craftsmanship</h1>
                         <h1 className='lg:text-[16px]'>Sustainability</h1>
                     </div>
-
                 </div>
             </div>
+            {
+                    isMobile ?  <h1 className='flex mt-[35px] text-center justify-center lg:text-base text-footerColor'>©Copyright 2022 Dekoor</h1> : <></>
+               
+            }
         </div>
     )
 }

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .glass-effect {
     background: rgba(255, 255, 255, 0.5); /* Use an RGBA value for a transparent white background */
     backdrop-filter: blur(10px); /* Apply a blur effect to the background */
@@ -9,13 +10,5 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to create depth */
     opacity: 0.8; /* Adjust the opacity as desired */
   }
-
-  .accordion {
-    background-color: #FCFAFA;
-    transition: background-color 0.3s ease;
-  }
-
-  .accordion.open {
-    background-color: #E5F0B6;
-  }
+ 
   

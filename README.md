@@ -2,7 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, clone repository: 
+git clone https://github.com/adamfadrian/Furniture-Landing-Page.git
+
+npm install
+
+second, run the development server:
 
 ```bash
 npm run dev
@@ -11,6 +16,11 @@ yarn dev
 # or
 pnpm dev
 ```
+Tech Stack :
+1. AXIOS
+2. MUI
+3. SwiperJS
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

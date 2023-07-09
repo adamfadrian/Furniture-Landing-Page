@@ -36,7 +36,7 @@ const theme = createTheme({
     palette: {
         anger: createColor('#fff'),
         brown: createColor('#553B33'),
-        steelBlue: createColor('#5C76B7'),
+        steelBlue: createColor('#E5F0B6'),
         brown2: createColor('#2F241F'),
     },
 });
@@ -47,7 +47,7 @@ const Hero = () => {
     // make a mobile resolution to make a responsive image  
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 375);
+            setIsMobile(window.matchMedia('(max-width: 376px)').matches);
         };
 
         handleResize();
@@ -81,7 +81,8 @@ const Hero = () => {
                 </div>
                 {/* 2 buttons search and watch */}
                 <div className='grid grid-cols-1 lg:grid-cols-2 items-center w-full lg:gap-6 gap-3 '>
-                    <Button className='mx-auto lg:mx-0 w-[282px] gap-4 py-4 px-6 lg:py-[22px] lg:px-9 lg:w-[344px] rounded-xl flex items-center bg-signUp'>
+                    <ThemeProvider theme={theme}>
+                    <Button className='mx-auto lg:mx-0 w-[282px] gap-4 py-4 px-6 lg:py-[22px] lg:px-9 lg:w-[344px] rounded-xl flex items-center ' variant='contained' color='steelBlue'  href="#contained-buttons">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <g clipPath="url(#clip0_4_487)">
                                 <path d="M15.5 14H14.71L14.43 13.73C15.63 12.33 16.25 10.42 15.91 8.39002C15.44 5.61002 13.12 3.39002 10.32 3.05002C6.09001 2.53002 2.53002 6.09001 3.05002 10.32C3.39002 13.12 5.61002 15.44 8.39002 15.91C10.42 16.25 12.33 15.63 13.73 14.43L14 14.71V15.5L18.25 19.75C18.66 20.16 19.33 20.16 19.74 19.75C20.15 19.34 20.15 18.67 19.74 18.26L15.5 14ZM9.50002 14C7.01002 14 5.00002 11.99 5.00002 9.50002C5.00002 7.01002 7.01002 5.00002 9.50002 5.00002C11.99 5.00002 14 7.01002 14 9.50002C14 11.99 11.99 14 9.50002 14Z" fill="#553B33" />
@@ -94,7 +95,6 @@ const Hero = () => {
                         </svg>
                         <h1 className='text-colorLight text-sm lg:text-2xl'>Search Catalog</h1>
                     </Button>
-                    <ThemeProvider theme={theme}>
                         <Button className='mx-auto lg:mx-0 w-[282px] gap-4 py-4 px-6 lg:py-[22px] lg:px-9 lg:w-[344px] rounded-xl' variant="outlined" color='brown'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M10.8 15.9L15.47 12.4C15.74 12.2 15.74 11.8 15.47 11.6L10.8 8.1C10.47 7.85 10 8.09 10 8.5V15.5C10 15.91 10.47 16.15 10.8 15.9ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="#553B33" />
